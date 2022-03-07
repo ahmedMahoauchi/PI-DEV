@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Ajout_PlanningController">
+   <children>
+      <Button fx:id="retour" layoutX="39.0" layoutY="45.0" mnemonicParsing="false" onAction="#retour" text="retour" />
+      <Button layoutX="175.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="37.0" prefWidth="101.0" text="enregistrer" />
+      <Label layoutX="129.0" layoutY="70.0" text="nom:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nom_planning" layoutX="175.0" layoutY="68.0" prefHeight="25.0" prefWidth="111.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <Label layoutX="81.0" layoutY="108.0" text="programme:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="progcomb" layoutX="174.0" layoutY="106.0" onAction="#getprog" prefHeight="25.0" prefWidth="111.0" promptText="programme" />
+      <Label layoutX="129.0" layoutY="142.0" text="date:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date_planning" layoutX="174.0" layoutY="140.0" onAction="#getdate" prefHeight="25.0" prefWidth="111.0" />
+      <Label layoutX="134.0" layoutY="177.0" text="lieu:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="lieucomb" layoutX="174.0" layoutY="174.0" onAction="#getlieu" prefHeight="25.0" prefWidth="111.0" promptText="lieu" />
+      <Label layoutX="85.0" layoutY="211.0" text="description:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="description_planning" layoutX="169.0" layoutY="211.0" prefHeight="104.0" prefWidth="122.0" />
+   </children>
+</AnchorPane>
