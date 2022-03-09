@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="Controller.ModuleController">
+   <children>
+      <Button fx:id="rubriques" layoutX="225.0" layoutY="165.0" mnemonicParsing="false" onAction="#rubriques" text="Gestion des rubriques" />
+      <Button fx:id="blogs" layoutX="234.0" layoutY="211.0" mnemonicParsing="false" onAction="#blogs" text="Gestion des blogs" />
+   </children>
+</AnchorPane>
