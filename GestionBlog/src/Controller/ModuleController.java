@@ -28,6 +28,8 @@ public class ModuleController implements Initializable {
     private Button rubriques;
     @FXML
     private Button blogs;
+    @FXML
+    private Button blogs1;
 
     /**
      * Initializes the controller class.
@@ -56,6 +58,19 @@ public class ModuleController implements Initializable {
         
                try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/GestionBlogs.fxml"));
+            Parent root = loader.load();
+            
+            rubriques.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void blogs1(ActionEvent event) {
+                  try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/AffichageBlogs.fxml"));
             Parent root = loader.load();
             
             rubriques.getScene().setRoot(root);

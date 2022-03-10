@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Modifier_BlogsController">
+<AnchorPane id="AnchorPane" prefHeight="389.0" prefWidth="591.0" stylesheets="@../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Modifier_BlogsController">
    <children>
-      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane id="AnchorPane" layoutX="-2.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #141124;">
          <children>
-            <Button layoutX="67.0" layoutY="333.0" mnemonicParsing="false" onAction="#modifier" prefHeight="37.0" prefWidth="101.0" text="enregistrer" />
+            <Button layoutX="67.0" layoutY="333.0" mnemonicParsing="false" onAction="#modifier" prefHeight="37.0" prefWidth="101.0" styleClass="button2" text="enregistrer" textFill="WHITE" />
             <VBox alignment="CENTER_RIGHT" layoutX="98.0" layoutY="75.0" prefHeight="37.0" prefWidth="128.0">
                <children>
-                  <Label text="titre">
+                  <Label text="titre" textFill="WHITE">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
@@ -26,7 +26,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label text="description:">
+                  <Label text="description:" textFill="WHITE">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
@@ -56,20 +56,20 @@
                   </TextArea>
                </children>
             </VBox>
-            <Button fx:id="retour" layoutX="67.0" layoutY="26.0" mnemonicParsing="false" onAction="#retour" text="retour" />
-            <Button layoutX="472.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#attach" text="attach" />
+            <Button fx:id="retour" layoutX="67.0" layoutY="26.0" mnemonicParsing="false" onAction="#retour" styleClass="button2" text="retour" textFill="WHITE" />
+            <Button layoutX="472.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#attach" styleClass="button2" text="attach" textFill="WHITE" />
             <TextField fx:id="txt_filename" layoutX="406.0" layoutY="251.0" prefHeight="31.0" prefWidth="141.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </TextField>
-            <Label layoutX="425.0" layoutY="297.0" prefHeight="21.0" prefWidth="47.0" text="photo:">
+            <Label layoutX="425.0" layoutY="297.0" prefHeight="21.0" prefWidth="47.0" text="photo:" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
             <ComboBox fx:id="rubrique" layoutX="202.0" layoutY="251.0" prefHeight="31.0" prefWidth="172.0" />
-            <Label layoutX="259.0" layoutY="225.0" text="rubrique:" />
+            <Label layoutX="259.0" layoutY="225.0" text="rubrique:" textFill="WHITE" />
             <ImageView fx:id="image_view" fitHeight="219.0" fitWidth="200.0" layoutX="377.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>

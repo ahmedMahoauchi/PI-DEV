@@ -85,7 +85,6 @@ public class BlogCRUD implements IService<Blog> {
             pst.setString(2, b.getDescription());
             pst.setString(3, b.getPhoto());
             pst.setTimestamp(4,Timestamp.valueOf(LocalDateTime.now()));
-         
             
             pst.executeUpdate();
                     System.out.println("votre blog est ajoutée");

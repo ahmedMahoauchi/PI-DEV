@@ -6,30 +6,34 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GestionRubriquesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #141124;" stylesheets="@../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GestionRubriquesController">
    <children>
-      <Text layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des rubriques">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Text>
       <Line endX="586.0" endY="-7.0" layoutX="14.0" layoutY="54.0" startX="-14.000015258789062" startY="-7.0" />
 
-      <TableView fx:id="tableview" layoutX="51.0" layoutY="57.0" prefHeight="325.0" prefWidth="499.0">
+      <TableView fx:id="tableview" layoutX="51.0" layoutY="57.0" prefHeight="325.0" prefWidth="499.0" styleClass="button3">
         <columns>
           <TableColumn fx:id="id" prefWidth="88.0" text="ID" />
           <TableColumn fx:id="titre" minWidth="0.0" prefWidth="306.00001525878906" text="TITRE" />
            <TableColumn fx:id="editCol" minWidth="0.0" prefWidth="105.0" text="gestion" />
         </columns>
       </TableView>
-      <FontAwesomeIconView fx:id="ajout" glyphName="PLUS" layoutX="315.0" layoutY="40.0" onMouseClicked="#Get_Add" size="30" />
-      <TextField fx:id="TFRecherche" layoutX="427.0" layoutY="14.0" prefHeight="31.0" prefWidth="117.0" />
-      <Label layoutX="356.0" layoutY="19.0" prefHeight="21.0" prefWidth="65.0" text="chercher:" />
-      <FontAwesomeIconView fx:id="retour" glyphName="UNDO" layoutX="560.0" layoutY="38.0" onMouseClicked="#retour" size="30" text="" />
+      <FontAwesomeIconView fx:id="ajout" fill="WHITE" glyphName="PLUS" layoutX="315.0" layoutY="40.0" onMouseClicked="#Get_Add" size="30" />
+      <TextField fx:id="TFRecherche" layoutX="427.0" layoutY="14.0" prefHeight="31.0" prefWidth="117.0" styleClass="button2" />
+      <Label layoutX="356.0" layoutY="19.0" prefHeight="21.0" prefWidth="65.0" text="chercher:" textFill="WHITE" />
+      <FontAwesomeIconView fx:id="retour" fill="WHITE" glyphName="UNDO" layoutX="560.0" layoutY="38.0" onMouseClicked="#retour" size="30" text="" />
+      <Pane layoutY="-3.0" prefHeight="61.0" prefWidth="262.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+         <children>
+            <Label layoutX="25.0" layoutY="17.0" text="Gestion Rubrique" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
 
    </children>
 </AnchorPane>

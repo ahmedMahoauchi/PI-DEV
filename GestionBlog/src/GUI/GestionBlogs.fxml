@@ -7,20 +7,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GestionBlogsController">
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="885.0" style="-fx-background-color: #141124;" stylesheets="@../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GestionBlogsController">
    <children>
-      <Text layoutX="24.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des blogs">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Text>
       <Line endX="868.0" endY="-7.0" layoutX="24.0" layoutY="57.0" startX="-24.0" startY="-7.0" />
-      <FontAwesomeIconView fx:id="ajout" glyphName="PLUS" layoutX="421.0" layoutY="39.0" onMouseClicked="#Get_Add" size="30" text="" />
-      <TableView fx:id="tableview" layoutX="11.0" layoutY="57.0" prefHeight="333.0" prefWidth="876.0">
+      <FontAwesomeIconView fx:id="ajout" fill="WHITE" glyphName="PLUS" layoutX="421.0" layoutY="39.0" onMouseClicked="#Get_Add" size="30" text="" />
+      <TableView fx:id="tableview" layoutX="11.0" layoutY="57.0" prefHeight="333.0" prefWidth="795.0" styleClass="button3">
          <columns>
             <TableColumn fx:id="preview" prefWidth="98.0" text="PREVIEW" />
             <TableColumn fx:id="id" prefWidth="38.0" text="ID" />
@@ -32,13 +27,21 @@
             <TableColumn fx:id="id_rubrique" prefWidth="109.0" text="ID_Rubrique" />
             <TableColumn fx:id="id_user" text="ID_USER" />
             <TableColumn fx:id="editCol" prefWidth="104.0" text="gestion" />
-            <TableColumn fx:id="like" prefWidth="93.0" text="Like" />
          </columns>
       </TableView>
-      <TextField fx:id="TFRecherche" layoutX="537.0" layoutY="13.0" prefHeight="31.0" prefWidth="117.0" />
-      <Label layoutX="466.0" layoutY="18.0" prefHeight="21.0" prefWidth="65.0" text="chercher:" />
+      <TextField fx:id="TFRecherche" layoutX="537.0" layoutY="13.0" prefHeight="31.0" prefWidth="117.0" styleClass="button2" />
+      <Label layoutX="466.0" layoutY="18.0" prefHeight="21.0" prefWidth="65.0" text="chercher:" textFill="WHITE" />
       <ComboBox fx:id="rubrique" layoutX="261.0" layoutY="13.0" onAction="#choisir" prefHeight="31.0" prefWidth="137.0" />
-      <FontAwesomeIconView fx:id="retour" glyphName="UNDO" layoutX="677.0" layoutY="38.0" onMouseClicked="#retour" size="30" text="" />
+      <FontAwesomeIconView fx:id="retour" fill="WHITE" glyphName="UNDO" layoutX="677.0" layoutY="38.0" onMouseClicked="#retour" size="30" text="" />
+      <Pane layoutX="11.0" layoutY="2.0" prefHeight="52.0" prefWidth="162.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+         <children>
+            <Label layoutX="25.0" layoutY="17.0" text="Gestion Blog" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
 
    </children>
 </AnchorPane>

@@ -5,15 +5,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="444.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Ajout_RubriquesController">
+<AnchorPane id="AnchorPane" prefHeight="306.0" prefWidth="401.0" style="-fx-background-color: #141124;" stylesheets="@../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Ajout_RubriquesController">
    <children>
-      <Button layoutX="150.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="37.0" prefWidth="101.0" text="enregistrer" />
+      <Button layoutX="150.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="37.0" prefWidth="101.0" styleClass="button2" text="enregistrer" textFill="WHITE" />
       <VBox alignment="CENTER_RIGHT" layoutX="45.0" layoutY="48.0" prefHeight="158.0" prefWidth="128.0">
          <children>
-            <Label prefHeight="21.0" prefWidth="39.0" text="titre:">
+            <Label prefHeight="21.0" prefWidth="39.0" text="titre:" textFill="WHITE">
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
@@ -25,7 +26,7 @@
       </VBox>
       <VBox layoutX="180.0" layoutY="112.0" prefHeight="49.0" prefWidth="128.0">
          <children>
-            <TextField fx:id="titre">
+            <TextField fx:id="titre" styleClass="button2">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -35,7 +36,16 @@
             </TextField>
          </children>
       </VBox>
-      <Button fx:id="retour" layoutX="29.0" layoutY="35.0" mnemonicParsing="false" onAction="#retour" text="retour" />
+      <Button fx:id="retour" layoutX="29.0" layoutY="35.0" mnemonicParsing="false" onAction="#retour" styleClass="button2" text="retour" textFill="#e4e4e4" />
+      <Pane layoutX="179.0" layoutY="21.0" prefHeight="61.0" prefWidth="206.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+         <children>
+            <Label layoutX="25.0" layoutY="17.0" text="Ajout Rubrique" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
    <opaqueInsets>
       <Insets />

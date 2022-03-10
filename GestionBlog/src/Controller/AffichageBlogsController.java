@@ -69,7 +69,7 @@ import utils.MyConnection;
  *
  * @author oussama
  */
-public class GestionBlogsController implements Initializable {
+public class AffichageBlogsController implements Initializable {
 
     @FXML
     private FontAwesomeIconView ajout;
@@ -91,8 +91,7 @@ public class GestionBlogsController implements Initializable {
     private TableColumn<Blog, String> id_user;
     @FXML
     private TableView<Blog> tableview;
-    @FXML
-    private TableColumn<Blog, String> editCol;
+
     @FXML
         private TableColumn<Blog, Image> preview;
     @FXML
@@ -115,7 +114,7 @@ public class GestionBlogsController implements Initializable {
 
   
 
-      public GestionBlogsController() {
+      public AffichageBlogsController() {
         cnx2 = MyConnection.getInstance().getCnx();
     }
     /**
@@ -183,159 +182,7 @@ Blog s = new Blog();
     
      //add cell of button edit 
    
-         Callback<TableColumn<Blog, String>, TableCell<Blog, String>> cellFoctory = (TableColumn<Blog, String> param) -> {
-            // make cell containing buttons
-            
-             TableCell<Blog, String> cell = new TableCell<Blog, String>() {
-    
-                public void updateItem(String item, boolean empty) {
-                  
-                    //that cell created only on non-empty rows
-                    if (empty) {
-                        setGraphic(null);
-                        setText(null);
-
-                    } else {
-
-                        FontAwesomeIconView deleteIcon = new FontAwesomeIconView(FontAwesomeIcon.TRASH);
-                        FontAwesomeIconView editIcon = new FontAwesomeIconView(FontAwesomeIcon.PENCIL_SQUARE);
-                        FontAwesomeIconView printIcon = new FontAwesomeIconView(FontAwesomeIcon.PRINT);
-
-                        printIcon.setStyle(
-                                " -fx-cursor: hand ;"
-                                + "-glyph-size:28px;"
-                              
-                        );
-                        
-                        deleteIcon.setStyle(
-                                " -fx-cursor: hand ;"
-                                + "-glyph-size:28px;"
-                                + "-fx-fill:#ff1744;"
-                        );
-                        editIcon.setStyle(
-                                " -fx-cursor: hand ;"
-                                + "-glyph-size:28px;"
-                                + "-fx-fill:#00E676;"
-                        );
-                        
-                       
-                        printIcon.setOnMouseClicked((MouseEvent event) -> {
-     
-        String path="";
-JFileChooser j=new JFileChooser ();
-j.setFileSelectionMode (JFileChooser.DIRECTORIES_ONLY) ;
-dataList=list;
-int x=j.showSaveDialog (null);
-if (x==JFileChooser. APPROVE_OPTION)
-    path=j.getSelectedFile ().getPath ();
-Document doc=new Document();
-try{
-   PdfWriter.getInstance (doc, new FileOutputStream (path+".pidev.pdf"));
-   doc.open();
-PdfPTable tbl=new PdfPTable(4);
-//adding header
-tbl.addCell ("titre");
-tbl.addCell ("description");
-tbl.addCell ("photo");
-tbl.addCell ("date");
-
-for (int i = 0; i < 10; i++) {
-
-                            
-    tableview.getVisibleLeafColumn(0).toString();
-}
-      Blog p = new Blog();
-   p=tableview.getSelectionModel().getSelectedItem();
-   String titreP=p.getTitre();
-   String descriptionP=p.getDescription();
-   String photoP=p.getPhoto();
-   String dateP=p.getDate().toString();
-
-   tbl.addCell (titreP);
-   tbl.addCell (descriptionP);
-   tbl.addCell (photoP);
-   tbl.addCell (dateP);
-   doc.add(tbl);
-   
-}catch (FileNotFoundException ex) {
-    Logger.getLogger (GestionBlogsController.class.getName ()).log (Level.SEVERE, null, ex);
-    }                       catch (DocumentException ex) {
-                                Logger.getLogger(GestionBlogsController.class.getName()).log(Level.SEVERE, null, ex);
-                            }
-doc.close();
-                        
-                      
-
-                        });
-                        
-                        
-                        
-                        deleteIcon.setOnMouseClicked((MouseEvent event) -> {
-           if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",
-        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-    // yes option
-                          try{
-                            Blog p = new Blog();
-                            p=tableview.getSelectionModel().getSelectedItem();
-                            pr.supprimer(p.getId());
-                            JOptionPane.showMessageDialog(null,"le blog a été supprimeé avec succés");
-                            loadData();
-          
-                                }catch(Exception e){
-                                    JOptionPane.showMessageDialog(null, e);}
-}
-           else {}
-                        });
-                        editIcon.setOnMouseClicked((MouseEvent event) -> {
-                            
-                            Blog p = new Blog();
-                            p=tableview.getSelectionModel().getSelectedItem();
-                          
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource("../GUI/Modifier_Blogs.fxml"));
-                            try {
-                                 loader.load();
-                                
-                            } catch (IOException ex) {
-                                Logger.getLogger(GestionBlogsController.class.getName()).log(Level.SEVERE, null, ex);
-                            }
-                            
-                            Modifier_BlogsController Modifier_BlogsController = loader.getController();
-                            Modifier_BlogsController.setUpdate(true);
-                            
-                            Modifier_BlogsController.setTextField(p.getId(),p.getTitre(),p.getDescription(),p.getPhoto(),p.getId_rubrique());
-                            Parent root = loader.getRoot();
-                            editIcon.getScene().setRoot(root);
-                            
-                            
-                            
-                            
-                            /*Parent parent = loader.getRoot();
-                            Stage stage = new Stage();
-                            stage.setScene(new Scene(parent));
-                            stage.initStyle(StageStyle.UTILITY);
-                            stage.show();*/
-                            
-
-                           
-
-                        });
-
-                        HBox managebtn = new HBox(editIcon, deleteIcon,printIcon);
-                        managebtn.setStyle("-fx-alignment:center");
-                        HBox.setMargin(deleteIcon, new Insets(2, 2, 0, 3));
-                        HBox.setMargin(editIcon, new Insets(2, 3, 0, 2));
-                        HBox.setMargin(printIcon, new Insets(2, 3, 0, 2));
-                        setGraphic(managebtn);
-
-                        setText(null);
-
-                    }
-                }
-
-            };
-
-            return cell;
-        };
+         
          /*
                            Callback<TableColumn<Blog, String>, TableCell<Blog, String>> cellFoctory1 = (TableColumn<Blog, String> param) -> {
             // make cell containing buttons
@@ -387,8 +234,7 @@ doc.close();
         };
          like.setCellFactory(cellFoctory1); 
 */
-         editCol.setCellFactory(cellFoctory);      
- 
+
         
                  try{
          tableview.setItems(list);

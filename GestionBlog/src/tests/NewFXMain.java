@@ -28,7 +28,7 @@ public class NewFXMain extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../GUI/Login.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/Module.fxml"));
            Scene scene = new Scene(root);
         
         stage.setScene(scene);
